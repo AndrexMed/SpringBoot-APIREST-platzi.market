@@ -17,7 +17,7 @@ public class Compra {
     @Column(name = "id_compra")
     private Integer idCompra;
     @Column(name = "id_cliente")
-    private Integer idCliente;
+    private String idCliente;
     private LocalDateTime fecha;
     @Column(name = "medio_pago")
     private String medioPago;
@@ -28,6 +28,6 @@ public class Compra {
     @JoinColumn(name = "id", insertable = false, updatable = false)
     private Cliente cliente;
 
-    @OneToMany(mappedBy = "producto")
+    @OneToMany(mappedBy = "compra")
     private List<ComprasProducto> productos;
 }
